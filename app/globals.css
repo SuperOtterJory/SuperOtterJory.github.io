@@ -8,8 +8,8 @@
   --line: #e2e2e2;
   --soft: #f5f5f3;
   --paper: #ffffff;
-  --font-academic: "Times New Roman", Times, "宋体", SimSun, "Songti SC", STSong, serif;
-  --font-chinese: "宋体", SimSun, "Songti SC", STSong, serif;
+  --font-academic: "Times New Roman", Times, "黑体", SimHei, "Microsoft YaHei", "Heiti SC", "PingFang SC", sans-serif;
+  --font-chinese: "黑体", SimHei, "Microsoft YaHei", "Heiti SC", "PingFang SC", sans-serif;
 }
 
 * {
@@ -33,6 +33,7 @@ body {
 
 :lang(zh-CN) {
   font-family: var(--font-chinese);
+  font-weight: 700;
 }
 
 a {
@@ -171,8 +172,8 @@ a {
   color: var(--muted);
   font-family: var(--font-chinese);
   font-size: 0.96rem;
-  font-weight: 520;
-  letter-spacing: 0.1em;
+  font-weight: 700;
+  letter-spacing: 0.08em;
 }
 
 .profile-role {
