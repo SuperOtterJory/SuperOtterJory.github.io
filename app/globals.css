@@ -8,6 +8,8 @@
   --line: #e2e2e2;
   --soft: #f5f5f3;
   --paper: #ffffff;
+  --shell-width: 1380px;
+  --shell-gutter: 72px;
   --font-academic: "Times New Roman", Times, "黑体", SimHei, "Microsoft YaHei", "Heiti SC", "PingFang SC", sans-serif;
   --font-chinese: "黑体", SimHei, "Microsoft YaHei", "Heiti SC", "PingFang SC", sans-serif;
 }
@@ -59,7 +61,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(1240px, calc(100% - 64px));
+  width: min(var(--shell-width), calc(100% - var(--shell-gutter)));
   min-height: 72px;
   margin: 0 auto;
 }
@@ -69,7 +71,7 @@ a {
   gap: 0.65rem;
   align-items: center;
   flex: 0 0 auto;
-  font-size: 0.95rem;
+  font-size: 1.05rem;
   font-weight: 680;
   letter-spacing: -0.015em;
 }
@@ -85,7 +87,7 @@ a {
   gap: clamp(1.1rem, 1.8vw, 1.75rem);
   align-items: center;
   color: #5f5f5f;
-  font-size: 0.84rem;
+  font-size: 0.95rem;
 }
 
 .site-header nav a {
@@ -119,12 +121,12 @@ a {
 
 .academic-layout {
   display: grid;
-  grid-template-columns: 250px minmax(0, 1fr);
-  gap: clamp(4rem, 6vw, 5.5rem);
+  grid-template-columns: 270px minmax(0, 1fr);
+  gap: clamp(5.5rem, 7.5vw, 7.5rem);
   align-items: start;
-  width: min(1240px, calc(100% - 64px));
+  width: min(var(--shell-width), calc(100% - var(--shell-gutter)));
   margin: 0 auto;
-  padding: 4.5rem 0 7rem;
+  padding: 5rem 0 7.5rem;
 }
 
 .profile-card {
@@ -134,8 +136,8 @@ a {
 
 .profile-photo {
   display: block;
-  width: 184px;
-  height: 184px;
+  width: 196px;
+  height: 196px;
   padding: 5px;
   border: 1px solid var(--line);
   border-radius: 50%;
@@ -153,7 +155,7 @@ a {
   margin: 0 0 0.45rem;
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.68rem;
+  font-size: 0.78rem;
   font-weight: 650;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -161,7 +163,7 @@ a {
 
 .profile-card h1 {
   margin: 0;
-  font-size: 1.44rem;
+  font-size: 1.58rem;
   font-weight: 680;
   line-height: 1.25;
   letter-spacing: -0.025em;
@@ -171,7 +173,7 @@ a {
   margin: 0.15rem 0 0;
   color: var(--muted);
   font-family: var(--font-chinese);
-  font-size: 0.92rem;
+  font-size: 1.02rem;
   font-weight: 700;
   letter-spacing: 0.08em;
 }
@@ -179,14 +181,14 @@ a {
 .profile-role {
   margin: 0.65rem 0 0;
   color: var(--body);
-  font-size: 0.86rem;
+  font-size: 0.98rem;
   line-height: 1.55;
 }
 
 .profile-location {
   margin: 0.75rem 0 0;
   color: var(--muted);
-  font-size: 0.76rem;
+  font-size: 0.88rem;
 }
 
 .profile-location::before {
@@ -212,7 +214,7 @@ a {
   padding: 0.56rem 0;
   border-bottom: 1px solid var(--line);
   color: var(--body);
-  font-size: 0.78rem;
+  font-size: 0.9rem;
   transition:
     color 150ms ease,
     padding-left 150ms ease;
@@ -221,7 +223,7 @@ a {
 .profile-links a span:last-child {
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.6rem;
+  font-size: 0.68rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -257,7 +259,7 @@ a {
 .section-heading > span {
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.76rem;
+  font-size: 0.82rem;
   font-weight: 650;
   letter-spacing: 0.05em;
 }
@@ -274,8 +276,8 @@ a {
   max-width: 900px;
   margin: 0;
   color: var(--body);
-  font-size: 1.08rem;
-  line-height: 1.68;
+  font-size: 1.16rem;
+  line-height: 1.65;
 }
 
 .content-section > p + p {
@@ -288,13 +290,13 @@ a {
   align-items: baseline;
   margin-top: 1.25rem;
   color: var(--body);
-  font-size: 1rem;
+  font-size: 1.08rem;
 }
 
 .personal-note > span {
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.76rem;
+  font-size: 0.82rem;
   font-weight: 650;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -308,7 +310,7 @@ a {
 }
 
 .intro-section .section-heading > span {
-  font-size: 0.65rem;
+  font-size: 0.75rem;
 }
 
 .intro-section .section-heading h2 {
@@ -316,21 +318,21 @@ a {
 }
 
 .intro-section > p {
-  font-size: 1rem;
-  line-height: 1.7;
+  font-size: 1.14rem;
+  line-height: 1.68;
 }
 
 .intro-section .intro {
-  font-size: clamp(1.2rem, 2vw, 1.45rem);
+  font-size: clamp(1.24rem, 1.8vw, 1.46rem);
   line-height: 1.6;
 }
 
 .intro-section .personal-note {
-  font-size: 0.88rem;
+  font-size: 1.04rem;
 }
 
 .intro-section .personal-note > span {
-  font-size: 0.65rem;
+  font-size: 0.78rem;
 }
 
 .advisor-list {
@@ -350,7 +352,7 @@ a {
   margin: 0;
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.76rem;
+  font-size: 0.86rem;
   font-weight: 650;
   letter-spacing: 0.045em;
   line-height: 1.6;
@@ -359,7 +361,7 @@ a {
 
 .advisor-copy h3 {
   margin: 0;
-  font-size: 1.12rem;
+  font-size: 1.18rem;
   font-weight: 650;
   line-height: 1.45;
 }
@@ -372,7 +374,7 @@ a {
 .advisor-copy p {
   margin: 0.25rem 0 0;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 1.02rem;
   line-height: 1.55;
 }
 
@@ -389,7 +391,7 @@ a {
   border-bottom: 1px solid var(--line);
   color: var(--body);
   font-family: var(--font-academic);
-  font-size: 0.78rem;
+  font-size: 0.9rem;
 }
 
 .advisor-links a:hover,
@@ -415,7 +417,7 @@ a {
   padding: 1rem 1.1rem 1rem 1.4rem;
   border-bottom: 1px solid var(--line);
   color: #333;
-  font-size: 1rem;
+  font-size: 1.12rem;
 }
 
 .interest-list li:nth-child(odd) {
@@ -450,7 +452,7 @@ a {
 .honors-list time {
   color: var(--muted);
   font-family: var(--font-academic);
-  font-size: 0.8rem;
+  font-size: 0.92rem;
   font-variant-numeric: lining-nums tabular-nums;
   line-height: 1.7;
 }
@@ -462,7 +464,7 @@ a {
 }
 
 .publication-copy strong {
-  font-size: 1.08rem;
+  font-size: 1.18rem;
   font-weight: 640;
   line-height: 1.52;
   letter-spacing: -0.012em;
@@ -470,7 +472,7 @@ a {
 
 .publication-copy small {
   color: var(--muted);
-  font-size: 0.88rem;
+  font-size: 1.02rem;
   line-height: 1.55;
 }
 
@@ -478,7 +480,7 @@ a {
   justify-self: end;
   min-width: 56px;
   color: var(--epfl-red);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   text-align: right;
 }
 
@@ -492,7 +494,7 @@ a {
   margin-top: 1.25rem;
   padding-bottom: 2px;
   border-bottom: 1px solid var(--ink);
-  font-size: 0.94rem;
+  font-size: 1.02rem;
   font-weight: 600;
 }
 
@@ -522,7 +524,7 @@ a {
 .honors-list h3,
 .talk-copy h3 {
   margin: 0;
-  font-size: 1.08rem;
+  font-size: 1.18rem;
   font-weight: 650;
   line-height: 1.5;
 }
@@ -536,7 +538,7 @@ a {
 .talk-copy p {
   margin: 0.25rem 0 0;
   color: var(--muted);
-  font-size: 0.92rem;
+  font-size: 1.02rem;
   line-height: 1.55;
 }
 
@@ -551,7 +553,7 @@ a {
   background: var(--soft);
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.72rem;
+  font-size: 0.82rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -575,14 +577,14 @@ a {
   max-width: 580px;
   margin: 0.65rem 0 1.2rem;
   color: var(--body);
-  font-size: 1.08rem;
+  font-size: 1.14rem;
 }
 
 .contact-section > a {
   padding-bottom: 3px;
   border-bottom: 1px solid var(--ink);
   font-family: var(--font-academic);
-  font-size: 1rem;
+  font-size: 1.06rem;
 }
 
 .contact-section > a:hover,
@@ -599,11 +601,27 @@ footer {
 footer > div {
   display: flex;
   justify-content: space-between;
-  width: min(1240px, calc(100% - 64px));
+  width: min(var(--shell-width), calc(100% - var(--shell-gutter)));
   margin: 0 auto;
   padding: 1.35rem 0;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 1100px) {
+  .academic-layout {
+    grid-template-columns: 230px minmax(0, 1fr);
+    gap: 3.75rem;
+  }
+
+  .profile-photo {
+    width: 176px;
+    height: 176px;
+  }
+
+  .site-header nav {
+    gap: 1rem;
+  }
 }
 
 @media (max-width: 760px) {
