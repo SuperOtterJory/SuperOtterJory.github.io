@@ -412,8 +412,8 @@ a {
 
 .publication-item {
   display: grid;
-  grid-template-columns: 64px minmax(0, 1fr) 22px;
-  gap: 1.25rem;
+  grid-template-columns: 64px minmax(0, 1fr) 42px;
+  gap: 1.5rem;
   align-items: start;
   padding: 1.2rem 0;
   border-bottom: 1px solid var(--line);
@@ -450,8 +450,10 @@ a {
 
 .publication-arrow {
   justify-self: end;
+  min-width: 42px;
   color: var(--epfl-red);
   font-size: 0.88rem;
+  text-align: right;
 }
 
 .publication-item:hover strong,
@@ -700,7 +702,7 @@ footer > div {
   }
 
   .publication-item {
-    grid-template-columns: 42px minmax(0, 1fr) 12px;
+    grid-template-columns: 42px minmax(0, 1fr) 34px;
     gap: 0.7rem;
   }
 
