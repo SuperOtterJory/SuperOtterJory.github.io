@@ -221,6 +221,9 @@ export default function Home() {
           <div className="profile-copy">
             <p className="profile-kicker">Incoming PhD Student</p>
             <h1>Jinyu Zhang</h1>
+            <p className="profile-chinese-name" lang="zh-CN">
+              张晋瑜
+            </p>
             <p className="profile-role">
               Operations Research and Machine Learning
               <br />
@@ -258,6 +261,15 @@ export default function Home() {
               that data can lead to better, faster, and more reliable
               operational decisions. Before joining EPFL, I studied at
               Southeast University and Beijing Jiaotong University.
+            </p>
+            <p>
+              My Chinese name is <span lang="zh-CN">张晋瑜</span> (Zhang
+              Jinyu). <span lang="zh-CN">晋</span> is the traditional
+              abbreviation for my home province, Shanxi, while
+              <span lang="zh-CN"> 瑜</span> means beautiful jade.
+            </p>
+            <p className="personal-note">
+              <span>Beyond research</span> I enjoy long-distance running.
             </p>
           </section>
 

@@ -160,6 +160,14 @@ a {
   letter-spacing: -0.025em;
 }
 
+.profile-chinese-name {
+  margin: 0.15rem 0 0;
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 520;
+  letter-spacing: 0.1em;
+}
+
 .profile-role {
   margin: 0.65rem 0 0;
   color: var(--body);
@@ -264,6 +272,24 @@ a {
 
 .content-section > p + p {
   margin-top: 1rem;
+}
+
+.content-section .personal-note {
+  display: flex;
+  gap: 0.75rem;
+  align-items: baseline;
+  margin-top: 1.25rem;
+  color: var(--body);
+  font-size: 0.8rem;
+}
+
+.personal-note > span {
+  color: var(--epfl-red);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.58rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
 }
 
 .content-section .intro {
@@ -646,6 +672,10 @@ footer > div {
 
   .profile-card h1 {
     font-size: 1.18rem;
+  }
+
+  .profile-chinese-name {
+    font-size: 0.75rem;
   }
 
   .profile-role {

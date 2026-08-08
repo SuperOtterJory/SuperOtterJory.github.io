@@ -33,6 +33,9 @@ test("server-renders the finished academic homepage", async () => {
   assert.match(html, /Selected publications/i);
   assert.match(html, /Academic advising/i);
   assert.match(html, /Nikolas Geroliminis/i);
+  assert.match(html, /张晋瑜/);
+  assert.match(html, /beautiful jade/i);
+  assert.match(html, /long-distance running/i);
   assert.match(html, /Conference talks/i);
   assert.match(html, /Learning-augmented optimization/i);
   assert.match(html, /Southeast University Presidential Scholarship/i);
