@@ -135,7 +135,7 @@ a {
   background: white;
   object-fit: cover;
   object-position: center 28%;
-  filter: saturate(0.78);
+  filter: saturate(0.92) contrast(1.01);
 }
 
 .profile-copy {

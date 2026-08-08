@@ -42,12 +42,18 @@ test("keeps the final profile assets and removes starter references", async () =
     readFile(new URL("../app/page.tsx", import.meta.url), "utf8"),
     readFile(new URL("../app/layout.tsx", import.meta.url), "utf8"),
     readFile(new URL("../package.json", import.meta.url), "utf8"),
-    access(new URL("../public/jinyu-zhang.webp", import.meta.url)),
+    access(
+      new URL(
+        "../public/jinyu-zhang-informal-retouched-v1.png",
+        import.meta.url,
+      ),
+    ),
     access(new URL("../public/og-v2.png", import.meta.url)),
   ]);
 
   assert.match(page, /className="academic-layout"/);
   assert.match(page, /id="publications"/);
+  assert.match(page, /jinyu-zhang-informal-retouched-v1\.png/);
   assert.match(layout, /\/og-v2\.png/);
   assert.doesNotMatch(page, /SkeletonPreview|codex-preview/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);

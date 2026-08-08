@@ -141,10 +141,10 @@ export default function Home() {
         <aside className="profile-card" aria-label="Profile">
           <img
             className="profile-photo"
-            src="/jinyu-zhang.webp"
-            alt="Portrait of Jinyu Zhang"
-            width="360"
-            height="360"
+            src="/jinyu-zhang-informal-retouched-v1.png"
+            alt="Informal portrait of Jinyu Zhang in the mountains"
+            width="1024"
+            height="1536"
           />
           <div className="profile-copy">
             <p className="profile-kicker">Incoming PhD Student</p>
