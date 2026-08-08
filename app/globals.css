@@ -438,8 +438,8 @@ a {
 
 .publication-item {
   display: grid;
-  grid-template-columns: 64px minmax(0, 1fr) 42px;
-  gap: 1.5rem;
+  grid-template-columns: 64px minmax(0, 1fr) 56px;
+  gap: 2rem;
   align-items: start;
   padding: 1.2rem 0;
   border-bottom: 1px solid var(--line);
@@ -476,7 +476,7 @@ a {
 
 .publication-arrow {
   justify-self: end;
-  min-width: 42px;
+  min-width: 56px;
   color: var(--epfl-red);
   font-size: 0.88rem;
   text-align: right;
@@ -728,7 +728,7 @@ footer > div {
   }
 
   .publication-item {
-    grid-template-columns: 42px minmax(0, 1fr) 34px;
+    grid-template-columns: 42px minmax(0, 1fr) 40px;
     gap: 0.7rem;
   }
 
