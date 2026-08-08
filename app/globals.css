@@ -75,10 +75,10 @@ a {
 
 .site-header nav {
   display: flex;
-  gap: clamp(1.1rem, 2.5vw, 2.25rem);
+  gap: clamp(0.8rem, 1.65vw, 1.55rem);
   align-items: center;
   color: #5f5f5f;
-  font-size: 0.78rem;
+  font-size: 0.73rem;
 }
 
 .site-header nav a {
@@ -204,7 +204,10 @@ a {
 
 .profile-links a span:last-child {
   color: var(--epfl-red);
-  font-size: 0.68rem;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.52rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .profile-links a:hover,
@@ -268,6 +271,73 @@ a {
   font-size: clamp(1.08rem, 1.9vw, 1.28rem);
   line-height: 1.62;
   letter-spacing: -0.015em;
+}
+
+.advisor-list {
+  border-top: 1px solid var(--line);
+}
+
+.advisor-item {
+  display: grid;
+  grid-template-columns: 125px minmax(0, 1fr) auto;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.3rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.advisor-role {
+  margin: 0;
+  color: var(--epfl-red);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.58rem;
+  font-weight: 650;
+  letter-spacing: 0.045em;
+  line-height: 1.6;
+  text-transform: uppercase;
+}
+
+.advisor-copy h3 {
+  margin: 0;
+  font-size: 0.9rem;
+  font-weight: 650;
+  line-height: 1.45;
+}
+
+.advisor-copy h3 a:hover,
+.advisor-copy h3 a:focus-visible {
+  color: var(--epfl-red);
+}
+
+.advisor-copy p {
+  margin: 0.25rem 0 0;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.55;
+}
+
+.advisor-links {
+  display: flex;
+  gap: 0.7rem;
+  align-items: center;
+  padding-top: 0.1rem;
+}
+
+.advisor-links a,
+.talk-item > a {
+  padding-bottom: 1px;
+  border-bottom: 1px solid var(--line);
+  color: var(--body);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.58rem;
+}
+
+.advisor-links a:hover,
+.advisor-links a:focus-visible,
+.talk-item > a:hover,
+.talk-item > a:focus-visible {
+  border-color: var(--epfl-red);
+  color: var(--epfl-red);
 }
 
 .interest-list {
@@ -370,12 +440,14 @@ a {
 }
 
 .education-list,
-.honors-list {
+.honors-list,
+.talk-list {
   border-top: 1px solid var(--line);
 }
 
 .education-list article,
-.honors-list article {
+.honors-list article,
+.talk-item {
   display: grid;
   grid-template-columns: 105px minmax(0, 1fr);
   gap: 1.5rem;
@@ -384,7 +456,8 @@ a {
 }
 
 .education-list h3,
-.honors-list h3 {
+.honors-list h3,
+.talk-copy h3 {
   margin: 0;
   font-size: 0.86rem;
   font-weight: 650;
@@ -396,11 +469,28 @@ a {
 }
 
 .education-list p,
-.honors-list p {
+.honors-list p,
+.talk-copy p {
   margin: 0.25rem 0 0;
   color: var(--muted);
   font-size: 0.72rem;
   line-height: 1.55;
+}
+
+.talk-item {
+  grid-template-columns: 70px minmax(0, 1fr) 34px;
+}
+
+.talk-copy p span {
+  display: inline-block;
+  margin-left: 0.45rem;
+  padding: 0.08rem 0.35rem;
+  background: var(--soft);
+  color: var(--epfl-red);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 0.54rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .contact-section {
@@ -408,6 +498,7 @@ a {
   padding: 2rem 2.2rem;
   border-left: 3px solid var(--epfl-red);
   background: var(--soft);
+  scroll-margin-top: 92px;
 }
 
 .contact-section h2 {
@@ -578,6 +669,21 @@ footer > div {
   .honors-list article {
     grid-template-columns: 78px minmax(0, 1fr);
     gap: 0.9rem;
+  }
+
+  .advisor-item {
+    grid-template-columns: 98px minmax(0, 1fr);
+    gap: 0.9rem;
+  }
+
+  .advisor-links {
+    grid-column: 2;
+    padding-top: 0;
+  }
+
+  .talk-item {
+    grid-template-columns: 44px minmax(0, 1fr) 30px;
+    gap: 0.75rem;
   }
 
   footer > div {

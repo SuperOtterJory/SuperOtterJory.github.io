@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 
 const title = "Jinyu Zhang | Incoming PhD Student at EPFL";
 const description =
-  "Jinyu Zhang works on learning-augmented optimization and intelligent transportation systems.";
+  "Jinyu Zhang is an incoming PhD student at LUTS, EPFL, working on learning-augmented optimization and intelligent transportation systems.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();

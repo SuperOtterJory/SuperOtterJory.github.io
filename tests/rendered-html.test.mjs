@@ -31,8 +31,13 @@ test("server-renders the finished academic homepage", async () => {
   const html = await response.text();
   assert.match(html, /<title>Jinyu Zhang \| Incoming PhD Student at EPFL<\/title>/i);
   assert.match(html, /Selected publications/i);
+  assert.match(html, /Academic advising/i);
+  assert.match(html, /Nikolas Geroliminis/i);
+  assert.match(html, /Conference talks/i);
   assert.match(html, /Learning-augmented optimization/i);
   assert.match(html, /Southeast University Presidential Scholarship/i);
+  assert.match(html, /2024[\s\S]*National Scholarship of China/i);
+  assert.match(html, /SuperOtterJory/i);
   assert.match(html, /Google Scholar/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/i);
 });
@@ -49,11 +54,15 @@ test("keeps the final profile assets and removes starter references", async () =
       ),
     ),
     access(new URL("../public/og-v2.png", import.meta.url)),
+    access(new URL("../public/Jinyu-Zhang-CV.pdf", import.meta.url)),
   ]);
 
   assert.match(page, /className="academic-layout"/);
   assert.match(page, /id="publications"/);
+  assert.match(page, /id="advising"/);
+  assert.match(page, /id="talks"/);
   assert.match(page, /jinyu-zhang-informal-retouched-v1\.png/);
+  assert.match(page, /Jinyu-Zhang-CV\.pdf/);
   assert.match(layout, /\/og-v2\.png/);
   assert.doesNotMatch(page, /SkeletonPreview|codex-preview/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);

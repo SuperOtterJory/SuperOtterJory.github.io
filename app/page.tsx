@@ -39,6 +39,14 @@ const profileLinks = [
     href: "mailto:jinyuzhangseu@gmail.com",
   },
   {
+    label: "CV",
+    href: "/Jinyu-Zhang-CV.pdf",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/SuperOtterJory",
+  },
+  {
     label: "Google Scholar",
     href: "https://scholar.google.com/citations?user=MtbsNLgAAAAJ&hl=en",
   },
@@ -52,6 +60,29 @@ const profileLinks = [
   },
 ];
 
+const advisors = [
+  {
+    role: "Ph.D. advisor",
+    name: "Prof. Nikolas Geroliminis",
+    affiliation: "Urban Transport Systems Laboratory (LUTS), EPFL",
+    href: "https://people.epfl.ch/nikolas.geroliminis?lang=en",
+    secondaryLabel: "LUTS",
+    secondaryHref: "https://www.epfl.ch/labs/luts/",
+  },
+  {
+    role: "M.Eng. supervisor",
+    name: "Prof. Di Huang",
+    affiliation: "School of Transportation, Southeast University",
+    href: "https://tc.seu.edu.cn/2024/0218/c25722a480863/page.htm",
+  },
+  {
+    role: "M.Eng. supervisor",
+    name: "Prof. Zhiyuan Liu",
+    affiliation: "School of Transportation, Southeast University",
+    href: "https://tc.seu.edu.cn/jt_en/2020/0420/c27992a324842/page.psp",
+  },
+];
+
 const researchInterests = [
   "Learning-augmented optimization",
   "Data-driven and prescriptive analytics",
@@ -59,21 +90,55 @@ const researchInterests = [
   "Scalable optimization algorithms",
 ];
 
-const education = [
+const talks = [
   {
-    period: "2026 —",
-    degree: "Ph.D. Student",
-    field: "Operations Research and Machine Learning",
-    institution: "EPFL · Lausanne, Switzerland",
+    year: "2025",
+    venue: "Transportation Research Board Annual Meeting, Washington, D.C.",
+    format: "Poster",
+    title:
+      "Prescriptive analytics for freeway traffic state estimation based on data fusion",
+    href: "https://annualmeeting.mytrb.org/OnlineProgramArchive/Details/22757",
   },
   {
-    period: "2023 — 2026",
+    year: "2024",
+    venue: "Transportation Research Board Annual Meeting, Washington, D.C.",
+    format: "Poster",
+    title:
+      "A fine-grained full-coverage highway traffic flow condition perception method based on heterogeneous sensor data fusion",
+    href: "https://annualmeeting.mytrb.org/OnlineProgramArchive/Details/21093",
+  },
+  {
+    year: "2024",
+    venue: "World Transport Convention, Qingdao",
+    format: "Oral",
+    title:
+      "A data-driven optimization-based approach for freeway traffic state estimation based on heterogeneous sensor data fusion",
+  },
+  {
+    year: "2024",
+    venue: "6th International Symposium on Multimodal Transportation, Nanjing",
+    format: "Oral",
+    title:
+      "Prescriptive analytics for freeway traffic state estimation based on data fusion",
+    href: "https://tc.seu.edu.cn/_t2411/Program/list.htm",
+  },
+];
+
+const education = [
+  {
+    period: "2026 -",
+    degree: "Ph.D. Student",
+    field: "Operations Research and Machine Learning",
+    institution: "EPFL, Lausanne, Switzerland",
+  },
+  {
+    period: "2023 - 2026",
     degree: "M.Eng.",
     field: "Traffic and Transportation Engineering",
     institution: "Southeast University",
   },
   {
-    period: "2019 — 2023",
+    period: "2019 - 2023",
     degree: "B.Eng.",
     field: "Traffic Engineering",
     institution: "Beijing Jiaotong University",
@@ -100,6 +165,11 @@ const honors = [
     year: "2025",
     title: "FTTE Future Stars Award",
     detail: "100 awardees selected from leading universities",
+  },
+  {
+    year: "2024",
+    title: "National Scholarship of China",
+    detail: "Awarded to the top 1% of students nationwide",
   },
 ];
 
@@ -129,8 +199,10 @@ export default function Home() {
           </a>
           <nav aria-label="Primary navigation">
             <a href="#about">About</a>
+            <a href="#advising">Advising</a>
             <a href="#research">Research</a>
             <a href="#publications">Publications</a>
+            <a href="#talks">Talks</a>
             <a href="#education">Education</a>
             <a href="#honors">Honors</a>
           </nav>
@@ -152,7 +224,7 @@ export default function Home() {
             <p className="profile-role">
               Operations Research and Machine Learning
               <br />
-              EPFL
+              LUTS, EPFL
             </p>
             <p className="profile-location">Lausanne, Switzerland</p>
           </div>
@@ -165,7 +237,7 @@ export default function Home() {
                 key={link.label}
               >
                 <span>{link.label}</span>
-                <span aria-hidden="true">↗</span>
+                <span aria-hidden="true">Open</span>
               </a>
             ))}
           </div>
@@ -175,9 +247,11 @@ export default function Home() {
           <section id="about" className="content-section intro-section">
             <SectionHeading number="01" title="About" />
             <p className="intro">
-              I am an incoming PhD student at EPFL. My research lies at the
-              intersection of machine learning, mathematical optimization, and
-              intelligent transportation systems.
+              I am an incoming PhD student at the Urban Transport Systems
+              Laboratory (LUTS), EPFL, advised by Prof. Nikolas Geroliminis.
+              My research lies at the intersection of machine learning,
+              mathematical optimization, and intelligent transportation
+              systems.
             </p>
             <p>
               I am interested in connecting prediction with optimization so
@@ -187,8 +261,41 @@ export default function Home() {
             </p>
           </section>
 
+          <section id="advising" className="content-section">
+            <SectionHeading number="02" title="Academic advising" />
+            <div className="advisor-list">
+              {advisors.map((advisor) => (
+                <article className="advisor-item" key={advisor.name}>
+                  <p className="advisor-role">{advisor.role}</p>
+                  <div className="advisor-copy">
+                    <h3>
+                      <a href={advisor.href} target="_blank" rel="noreferrer">
+                        {advisor.name}
+                      </a>
+                    </h3>
+                    <p>{advisor.affiliation}</p>
+                  </div>
+                  <div className="advisor-links">
+                    <a href={advisor.href} target="_blank" rel="noreferrer">
+                      Profile
+                    </a>
+                    {advisor.secondaryHref ? (
+                      <a
+                        href={advisor.secondaryHref}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        {advisor.secondaryLabel}
+                      </a>
+                    ) : null}
+                  </div>
+                </article>
+              ))}
+            </div>
+          </section>
+
           <section id="research" className="content-section">
-            <SectionHeading number="02" title="Research" />
+            <SectionHeading number="03" title="Research" />
             <p>
               My work develops learning-assisted methods for decision-making in
               complex and changing environments, with an emphasis on mobility
@@ -202,7 +309,7 @@ export default function Home() {
           </section>
 
           <section id="publications" className="content-section">
-            <SectionHeading number="03" title="Selected publications" />
+            <SectionHeading number="04" title="Selected publications" />
             <div className="publication-list">
               {publications.map((publication) => (
                 <a
@@ -216,18 +323,18 @@ export default function Home() {
                   <span className="publication-copy">
                     <strong>{publication.title}</strong>
                     <small>
-                      {publication.authors} · {publication.venue}
+                      {publication.authors} - {publication.venue}
                     </small>
                   </span>
                   <span className="publication-arrow" aria-hidden="true">
-                    ↗
+                    DOI
                   </span>
                 </a>
               ))}
             </div>
             <a
               className="text-link"
-              href={profileLinks[1].href}
+              href="https://scholar.google.com/citations?user=MtbsNLgAAAAJ&hl=en"
               target="_blank"
               rel="noreferrer"
             >
@@ -235,8 +342,32 @@ export default function Home() {
             </a>
           </section>
 
+          <section id="talks" className="content-section">
+            <SectionHeading number="05" title="Conference talks" />
+            <div className="talk-list">
+              {talks.map((talk) => (
+                <article className="talk-item" key={`${talk.year}-${talk.title}`}>
+                  <time>{talk.year}</time>
+                  <div className="talk-copy">
+                    <h3>{talk.title}</h3>
+                    <p>
+                      {talk.venue} <span>{talk.format}</span>
+                    </p>
+                  </div>
+                  {talk.href ? (
+                    <a href={talk.href} target="_blank" rel="noreferrer">
+                      View
+                    </a>
+                  ) : (
+                    <span aria-hidden="true" />
+                  )}
+                </article>
+              ))}
+            </div>
+          </section>
+
           <section id="education" className="content-section">
-            <SectionHeading number="04" title="Education" />
+            <SectionHeading number="06" title="Education" />
             <div className="education-list">
               {education.map((item) => (
                 <article key={`${item.period}-${item.institution}`}>
@@ -253,10 +384,10 @@ export default function Home() {
           </section>
 
           <section id="honors" className="content-section">
-            <SectionHeading number="05" title="Honors" />
+            <SectionHeading number="07" title="Honors" />
             <div className="honors-list">
               {honors.map((honor) => (
-                <article key={honor.title}>
+                <article key={`${honor.year}-${honor.title}`}>
                   <time>{honor.year}</time>
                   <div>
                     <h3>{honor.title}</h3>
@@ -267,9 +398,13 @@ export default function Home() {
             </div>
           </section>
 
-          <section className="contact-section" aria-labelledby="contact-title">
+          <section
+            id="contact"
+            className="contact-section"
+            aria-labelledby="contact-title"
+          >
             <p className="profile-kicker">Contact</p>
-            <h2 id="contact-title">Let’s talk research.</h2>
+            <h2 id="contact-title">Let's talk research.</h2>
             <p>
               I am always happy to discuss optimization, mobility, and possible
               research collaborations.
@@ -283,7 +418,7 @@ export default function Home() {
 
       <footer>
         <div>
-          <span>Jinyu Zhang · 2026</span>
+          <span>Jinyu Zhang - 2026</span>
           <span>Lausanne, Switzerland</span>
         </div>
       </footer>
