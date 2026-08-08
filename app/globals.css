@@ -26,7 +26,7 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-academic);
-  font-size: 17px;
+  font-size: 18px;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
@@ -59,8 +59,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: min(1120px, calc(100% - 48px));
-  min-height: 64px;
+  width: min(1240px, calc(100% - 64px));
+  min-height: 72px;
   margin: 0 auto;
 }
 
@@ -69,7 +69,7 @@ a {
   gap: 0.65rem;
   align-items: center;
   flex: 0 0 auto;
-  font-size: 1rem;
+  font-size: 1.08rem;
   font-weight: 680;
   letter-spacing: -0.015em;
 }
@@ -82,10 +82,10 @@ a {
 
 .site-header nav {
   display: flex;
-  gap: clamp(0.8rem, 1.65vw, 1.55rem);
+  gap: clamp(1.1rem, 1.8vw, 1.75rem);
   align-items: center;
   color: #5f5f5f;
-  font-size: 0.84rem;
+  font-size: 1rem;
 }
 
 .site-header nav a {
@@ -119,23 +119,23 @@ a {
 
 .academic-layout {
   display: grid;
-  grid-template-columns: 230px minmax(0, 1fr);
-  gap: clamp(3.5rem, 8vw, 7.5rem);
+  grid-template-columns: 250px minmax(0, 1fr);
+  gap: clamp(4rem, 6vw, 5.5rem);
   align-items: start;
-  width: min(1120px, calc(100% - 48px));
+  width: min(1240px, calc(100% - 64px));
   margin: 0 auto;
-  padding: 4rem 0 6rem;
+  padding: 4.5rem 0 7rem;
 }
 
 .profile-card {
   position: sticky;
-  top: 104px;
+  top: 116px;
 }
 
 .profile-photo {
   display: block;
-  width: 172px;
-  height: 172px;
+  width: 184px;
+  height: 184px;
   padding: 5px;
   border: 1px solid var(--line);
   border-radius: 50%;
@@ -153,7 +153,7 @@ a {
   margin: 0 0 0.45rem;
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.72rem;
+  font-size: 0.78rem;
   font-weight: 650;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -161,7 +161,7 @@ a {
 
 .profile-card h1 {
   margin: 0;
-  font-size: 1.52rem;
+  font-size: 1.7rem;
   font-weight: 680;
   line-height: 1.25;
   letter-spacing: -0.025em;
@@ -171,7 +171,7 @@ a {
   margin: 0.15rem 0 0;
   color: var(--muted);
   font-family: var(--font-chinese);
-  font-size: 0.96rem;
+  font-size: 1.06rem;
   font-weight: 700;
   letter-spacing: 0.08em;
 }
@@ -179,14 +179,14 @@ a {
 .profile-role {
   margin: 0.65rem 0 0;
   color: var(--body);
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1.55;
 }
 
 .profile-location {
   margin: 0.75rem 0 0;
   color: var(--muted);
-  font-size: 0.8rem;
+  font-size: 0.9rem;
 }
 
 .profile-location::before {
@@ -212,7 +212,7 @@ a {
   padding: 0.56rem 0;
   border-bottom: 1px solid var(--line);
   color: var(--body);
-  font-size: 0.82rem;
+  font-size: 0.94rem;
   transition:
     color 150ms ease,
     padding-left 150ms ease;
@@ -221,7 +221,7 @@ a {
 .profile-links a span:last-child {
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.62rem;
+  font-size: 0.72rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -248,8 +248,8 @@ a {
 
 .section-heading {
   display: grid;
-  grid-template-columns: 38px minmax(0, 1fr);
-  gap: 0.8rem;
+  grid-template-columns: 44px minmax(0, 1fr);
+  gap: 0.9rem;
   align-items: baseline;
   margin-bottom: 1.35rem;
 }
@@ -257,25 +257,25 @@ a {
 .section-heading > span {
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.68rem;
+  font-size: 0.76rem;
   font-weight: 650;
   letter-spacing: 0.05em;
 }
 
 .section-heading h2 {
   margin: 0;
-  font-size: clamp(1.85rem, 2.8vw, 2.3rem);
+  font-size: clamp(2.1rem, 3vw, 2.65rem);
   font-weight: 670;
   line-height: 1.2;
   letter-spacing: -0.035em;
 }
 
 .content-section > p {
-  max-width: 760px;
+  max-width: 900px;
   margin: 0;
   color: var(--body);
-  font-size: 1.05rem;
-  line-height: 1.75;
+  font-size: 1.08rem;
+  line-height: 1.68;
 }
 
 .content-section > p + p {
@@ -288,13 +288,13 @@ a {
   align-items: baseline;
   margin-top: 1.25rem;
   color: var(--body);
-  font-size: 0.92rem;
+  font-size: 1rem;
 }
 
 .personal-note > span {
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.68rem;
+  font-size: 0.76rem;
   font-weight: 650;
   letter-spacing: 0.05em;
   text-transform: uppercase;
@@ -302,8 +302,8 @@ a {
 
 .content-section .intro {
   color: var(--ink);
-  font-size: clamp(1.25rem, 2.15vw, 1.5rem);
-  line-height: 1.62;
+  font-size: clamp(1.38rem, 2.25vw, 1.68rem);
+  line-height: 1.55;
   letter-spacing: -0.015em;
 }
 
@@ -313,7 +313,7 @@ a {
 
 .advisor-item {
   display: grid;
-  grid-template-columns: 125px minmax(0, 1fr) auto;
+  grid-template-columns: 150px minmax(0, 1fr) auto;
   gap: 1.5rem;
   align-items: start;
   padding: 1.3rem 0;
@@ -324,7 +324,7 @@ a {
   margin: 0;
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.68rem;
+  font-size: 0.76rem;
   font-weight: 650;
   letter-spacing: 0.045em;
   line-height: 1.6;
@@ -333,7 +333,7 @@ a {
 
 .advisor-copy h3 {
   margin: 0;
-  font-size: 1.03rem;
+  font-size: 1.12rem;
   font-weight: 650;
   line-height: 1.45;
 }
@@ -346,7 +346,7 @@ a {
 .advisor-copy p {
   margin: 0.25rem 0 0;
   color: var(--muted);
-  font-size: 0.83rem;
+  font-size: 0.92rem;
   line-height: 1.55;
 }
 
@@ -363,7 +363,7 @@ a {
   border-bottom: 1px solid var(--line);
   color: var(--body);
   font-family: var(--font-academic);
-  font-size: 0.69rem;
+  font-size: 0.78rem;
 }
 
 .advisor-links a:hover,
@@ -389,7 +389,7 @@ a {
   padding: 1rem 1.1rem 1rem 1.4rem;
   border-bottom: 1px solid var(--line);
   color: #333;
-  font-size: 0.94rem;
+  font-size: 1rem;
 }
 
 .interest-list li:nth-child(odd) {
@@ -412,7 +412,7 @@ a {
 
 .publication-item {
   display: grid;
-  grid-template-columns: 55px minmax(0, 1fr) 18px;
+  grid-template-columns: 64px minmax(0, 1fr) 22px;
   gap: 1.25rem;
   align-items: start;
   padding: 1.2rem 0;
@@ -424,7 +424,7 @@ a {
 .honors-list time {
   color: var(--muted);
   font-family: var(--font-academic);
-  font-size: 0.71rem;
+  font-size: 0.8rem;
   font-variant-numeric: lining-nums tabular-nums;
   line-height: 1.7;
 }
@@ -436,7 +436,7 @@ a {
 }
 
 .publication-copy strong {
-  font-size: 0.97rem;
+  font-size: 1.08rem;
   font-weight: 640;
   line-height: 1.52;
   letter-spacing: -0.012em;
@@ -444,14 +444,14 @@ a {
 
 .publication-copy small {
   color: var(--muted);
-  font-size: 0.78rem;
+  font-size: 0.88rem;
   line-height: 1.55;
 }
 
 .publication-arrow {
   justify-self: end;
   color: var(--epfl-red);
-  font-size: 0.78rem;
+  font-size: 0.88rem;
 }
 
 .publication-item:hover strong,
@@ -464,7 +464,7 @@ a {
   margin-top: 1.25rem;
   padding-bottom: 2px;
   border-bottom: 1px solid var(--ink);
-  font-size: 0.84rem;
+  font-size: 0.94rem;
   font-weight: 600;
 }
 
@@ -484,7 +484,7 @@ a {
 .honors-list article,
 .talk-item {
   display: grid;
-  grid-template-columns: 105px minmax(0, 1fr);
+  grid-template-columns: 120px minmax(0, 1fr);
   gap: 1.5rem;
   padding: 1.25rem 0;
   border-bottom: 1px solid var(--line);
@@ -494,7 +494,7 @@ a {
 .honors-list h3,
 .talk-copy h3 {
   margin: 0;
-  font-size: 0.98rem;
+  font-size: 1.08rem;
   font-weight: 650;
   line-height: 1.5;
 }
@@ -508,12 +508,12 @@ a {
 .talk-copy p {
   margin: 0.25rem 0 0;
   color: var(--muted);
-  font-size: 0.83rem;
+  font-size: 0.92rem;
   line-height: 1.55;
 }
 
 .talk-item {
-  grid-template-columns: 70px minmax(0, 1fr) 34px;
+  grid-template-columns: 80px minmax(0, 1fr) 40px;
 }
 
 .talk-copy p span {
@@ -523,7 +523,7 @@ a {
   background: var(--soft);
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.64rem;
+  font-size: 0.72rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -547,14 +547,14 @@ a {
   max-width: 580px;
   margin: 0.65rem 0 1.2rem;
   color: var(--body);
-  font-size: 0.98rem;
+  font-size: 1.08rem;
 }
 
 .contact-section > a {
   padding-bottom: 3px;
   border-bottom: 1px solid var(--ink);
   font-family: var(--font-academic);
-  font-size: 0.89rem;
+  font-size: 1rem;
 }
 
 .contact-section > a:hover,
@@ -571,11 +571,11 @@ footer {
 footer > div {
   display: flex;
   justify-content: space-between;
-  width: min(1120px, calc(100% - 48px));
+  width: min(1240px, calc(100% - 64px));
   margin: 0 auto;
   padding: 1.35rem 0;
   color: var(--muted);
-  font-size: 0.72rem;
+  font-size: 0.8rem;
 }
 
 @media (max-width: 760px) {
