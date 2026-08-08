@@ -27,7 +27,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const origin = host
     ? `${protocol}://${host}`
     : "https://jinyu-zhang-academic.ndyeeggs0uv.chatgpt.site";
-  const socialImage = `${origin}/og.png`;
+  const socialImage = `${origin}/og-v2.png`;
 
   return {
     title,

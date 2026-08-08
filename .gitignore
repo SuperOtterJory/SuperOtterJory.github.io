@@ -38,5 +38,7 @@ yarn-error.log*
 /.wrangler/
 /outputs/
 /work/
+/output/
+/tmp/
 /.npm-cache/
 /.tmp/
