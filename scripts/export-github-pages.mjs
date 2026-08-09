@@ -45,6 +45,9 @@ const html = await response.text();
 if (!html.includes("Selected publications")) {
   throw new Error("Rendered homepage is missing expected academic content");
 }
+if (!html.includes(">News<") || !html.includes("Happy to share that")) {
+  throw new Error("Rendered homepage is missing expected news content");
+}
 if (
   !html.includes("Contextual Optimization") ||
   !html.includes("Learning to Optimize (L2O)") ||

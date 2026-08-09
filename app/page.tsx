@@ -5,6 +5,8 @@ const publications = [
       "Prescriptive analytics for freeway traffic state estimation by multi-source data fusion",
     authors: "D. Huang, J. Zhang, Z. Liu, and R. Liu",
     venue: "Transportation Research Part E, 198, 104105",
+    summary:
+      "Combines multi-source traffic data with prescriptive analytics for freeway traffic state estimation.",
     href: "https://doi.org/10.1016/j.tre.2025.104105",
   },
   {
@@ -13,6 +15,8 @@ const publications = [
       "A data-driven optimization-based approach for freeway traffic state estimation based on heterogeneous sensor data fusion",
     authors: "J. Zhang, D. Huang, Z. Liu, et al.",
     venue: "Transportation Research Part E, 189, 103656",
+    summary:
+      "Develops a data-driven optimization framework that fuses heterogeneous sensor observations for freeway traffic state estimation.",
     href: "https://doi.org/10.1016/j.tre.2024.103656",
   },
   {
@@ -21,6 +25,8 @@ const publications = [
       "A novel ranking method based on semi-SPO for battery swapping allocation optimization in a hybrid electric transit system",
     authors: "D. Huang, J. Zhang, Z. Liu, et al.",
     venue: "Transportation Research Part E, 188, 103611",
+    summary:
+      "Uses a semi-SPO-based ranking method to support battery-swapping allocation decisions in hybrid electric transit systems.",
     href: "https://doi.org/10.1016/j.tre.2024.103611",
   },
   {
@@ -29,7 +35,33 @@ const publications = [
       "A robust coordinated charging scheduling approach for hybrid electric bus charging systems",
     authors: "D. Huang, J. Zhang, and Z. Liu",
     venue: "Transportation Research Part D, 125, 103955",
+    summary:
+      "Develops a robust coordinated scheduling approach for hybrid electric bus charging systems.",
     href: "https://doi.org/10.1016/j.trd.2023.103955",
+  },
+];
+
+const newsItems = [
+  {
+    year: "2025",
+    category: "Publication",
+    text: 'Happy to share that our paper “Prescriptive analytics for freeway traffic state estimation by multi-source data fusion” was published in Transportation Research Part E.',
+    href: "https://doi.org/10.1016/j.tre.2025.104105",
+    linkLabel: "Paper",
+  },
+  {
+    year: "2025",
+    category: "Presentation",
+    text: "Happy to share that I presented our work on prescriptive analytics for freeway traffic state estimation at the Transportation Research Board Annual Meeting in Washington, D.C.",
+    href: "https://annualmeeting.mytrb.org/OnlineProgramArchive/Details/22757",
+    linkLabel: "TRB",
+  },
+  {
+    year: "2024",
+    category: "Publication",
+    text: 'Happy to share that our paper “A data-driven optimization-based approach for freeway traffic state estimation based on heterogeneous sensor data fusion” was published in Transportation Research Part E.',
+    href: "https://doi.org/10.1016/j.tre.2024.103656",
+    linkLabel: "Paper",
   },
 ];
 
@@ -174,27 +206,22 @@ const honors = [
   {
     year: "2025",
     title: "Southeast University Presidential Scholarship",
-    detail: "Highest graduate honor; 10 recipients university-wide",
   },
   {
     year: "2025",
     title: "National Scholarship of China",
-    detail: "Awarded to the top 1% of students nationwide",
   },
   {
     year: "2025",
     title: "Xiaomi Grand Scholarship",
-    detail: "8 recipients university-wide",
   },
   {
     year: "2025",
     title: "FTTE Future Stars Award",
-    detail: "100 awardees selected from leading universities",
   },
   {
     year: "2024",
     title: "National Scholarship of China",
-    detail: "Awarded to the top 1% of students nationwide",
   },
 ];
 
@@ -224,6 +251,7 @@ export default function Home() {
           </a>
           <nav aria-label="Primary navigation">
             <a href="#about">About</a>
+            <a href="#news">News</a>
             <a href="#advising">Advising</a>
             <a href="#research">Research</a>
             <a href="#publications">Publications</a>
@@ -299,8 +327,26 @@ export default function Home() {
             </p>
           </section>
 
+          <section id="news" className="content-section">
+            <SectionHeading number="02" title="News" />
+            <div className="news-list">
+              {newsItems.map((item) => (
+                <article className="news-item" key={`${item.year}-${item.text}`}>
+                  <time>{item.year}</time>
+                  <div className="news-copy">
+                    <p className="news-category">{item.category}</p>
+                    <p>{item.text}</p>
+                  </div>
+                  <a href={item.href} target="_blank" rel="noreferrer">
+                    {item.linkLabel}
+                  </a>
+                </article>
+              ))}
+            </div>
+          </section>
+
           <section id="advising" className="content-section">
-            <SectionHeading number="02" title="Academic advising" />
+            <SectionHeading number="03" title="Academic advising" />
             <div className="advisor-list">
               {advisors.map((advisor) => (
                 <article className="advisor-item" key={advisor.name}>
@@ -333,7 +379,7 @@ export default function Home() {
           </section>
 
           <section id="research" className="content-section">
-            <SectionHeading number="03" title="Research" />
+            <SectionHeading number="04" title="Research" />
             <p>
               My research connects learning and optimization to improve
               decision-making in complex and changing environments.
@@ -372,7 +418,7 @@ export default function Home() {
           </section>
 
           <section id="publications" className="content-section">
-            <SectionHeading number="04" title="Selected publications" />
+            <SectionHeading number="05" title="Selected publications" />
             <div className="publication-list">
               {publications.map((publication) => (
                 <a
@@ -385,6 +431,9 @@ export default function Home() {
                   <time>{publication.year}</time>
                   <span className="publication-copy">
                     <strong>{publication.title}</strong>
+                    <span className="publication-summary">
+                      {publication.summary}
+                    </span>
                     <small>
                       {publication.authors} - {publication.venue}
                     </small>
@@ -406,7 +455,7 @@ export default function Home() {
           </section>
 
           <section id="talks" className="content-section">
-            <SectionHeading number="05" title="Conference talks" />
+            <SectionHeading number="06" title="Conference talks" />
             <div className="talk-list">
               {talks.map((talk) => (
                 <article className="talk-item" key={`${talk.year}-${talk.title}`}>
@@ -430,7 +479,7 @@ export default function Home() {
           </section>
 
           <section id="education" className="content-section">
-            <SectionHeading number="06" title="Education" />
+            <SectionHeading number="07" title="Education" />
             <div className="education-list">
               {education.map((item) => (
                 <article key={`${item.period}-${item.institution}`}>
@@ -447,15 +496,12 @@ export default function Home() {
           </section>
 
           <section id="honors" className="content-section">
-            <SectionHeading number="07" title="Honors" />
+            <SectionHeading number="08" title="Honors" />
             <div className="honors-list">
               {honors.map((honor) => (
                 <article key={`${honor.year}-${honor.title}`}>
                   <time>{honor.year}</time>
-                  <div>
-                    <h3>{honor.title}</h3>
-                    <p>{honor.detail}</p>
-                  </div>
+                  <h3>{honor.title}</h3>
                 </article>
               ))}
             </div>

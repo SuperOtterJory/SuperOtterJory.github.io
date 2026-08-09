@@ -84,14 +84,22 @@ a {
 
 .site-header nav {
   display: flex;
+  min-width: 0;
   gap: clamp(1.1rem, 1.8vw, 1.75rem);
   align-items: center;
+  overflow-x: auto;
   color: #5f5f5f;
   font-size: 0.95rem;
+  scrollbar-width: none;
+}
+
+.site-header nav::-webkit-scrollbar {
+  display: none;
 }
 
 .site-header nav a {
   position: relative;
+  flex: 0 0 auto;
   padding: 0.3rem 0;
   transition: color 150ms ease;
 }
@@ -335,6 +343,63 @@ a {
   font-size: 0.78rem;
 }
 
+.news-list {
+  border-top: 1px solid var(--line);
+}
+
+.news-item {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) 48px;
+  gap: 1.5rem;
+  align-items: start;
+  padding: 1.25rem 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.news-item time {
+  color: var(--muted);
+  font-family: var(--font-academic);
+  font-size: 0.92rem;
+  font-variant-numeric: lining-nums tabular-nums;
+  line-height: 1.7;
+}
+
+.news-copy p {
+  margin: 0;
+}
+
+.news-copy .news-category {
+  color: var(--epfl-red);
+  font-family: var(--font-academic);
+  font-size: 0.82rem;
+  font-weight: 650;
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+.news-copy p:last-child {
+  margin-top: 0.25rem;
+  color: var(--body);
+  font-size: 1.08rem;
+  line-height: 1.6;
+}
+
+.news-item > a {
+  justify-self: end;
+  padding-bottom: 1px;
+  border-bottom: 1px solid var(--line);
+  color: var(--body);
+  font-family: var(--font-academic);
+  font-size: 0.9rem;
+}
+
+.news-item > a:hover,
+.news-item > a:focus-visible {
+  border-color: var(--epfl-red);
+  color: var(--epfl-red);
+}
+
 .advisor-list {
   border-top: 1px solid var(--line);
 }
@@ -544,6 +609,12 @@ a {
   letter-spacing: -0.012em;
 }
 
+.publication-summary {
+  color: var(--body);
+  font-size: 1.03rem;
+  line-height: 1.55;
+}
+
 .publication-copy small {
   color: var(--muted);
   font-size: 1.02rem;
@@ -608,7 +679,6 @@ a {
 }
 
 .education-list p,
-.honors-list p,
 .talk-copy p {
   margin: 0.25rem 0 0;
   color: var(--muted);
@@ -707,16 +777,9 @@ footer > div {
   .site-header nav {
     max-width: 65vw;
     gap: 1.1rem;
-    overflow-x: auto;
-    scrollbar-width: none;
-  }
-
-  .site-header nav::-webkit-scrollbar {
-    display: none;
   }
 
   .site-header nav a {
-    flex: 0 0 auto;
     font-size: 0.8rem;
   }
 
@@ -819,6 +882,11 @@ footer > div {
 
   .section-heading {
     grid-template-columns: 28px minmax(0, 1fr);
+  }
+
+  .news-item {
+    grid-template-columns: 52px minmax(0, 1fr) 40px;
+    gap: 0.75rem;
   }
 
   .research-direction {
