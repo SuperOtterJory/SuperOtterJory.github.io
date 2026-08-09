@@ -37,7 +37,11 @@ test("server-renders the finished academic homepage", async () => {
   assert.match(html, /beautiful jade/i);
   assert.match(html, /long-distance running/i);
   assert.match(html, /Conference talks/i);
-  assert.match(html, /Learning-augmented optimization/i);
+  assert.match(html, /Contextual Optimization/i);
+  assert.match(html, /Learning to Optimize \(L2O\)/i);
+  assert.match(html, /AI-aided Optimization/i);
+  assert.match(html, /AI-native Optimization/i);
+  assert.match(html, /directly construct high-quality solutions/i);
   assert.match(html, /Southeast University Presidential Scholarship/i);
   assert.match(html, /2024[\s\S]*National Scholarship of China/i);
   assert.match(html, /SuperOtterJory/i);
@@ -61,12 +65,14 @@ test("keeps the final profile assets and removes starter references", async () =
   ]);
 
   assert.match(page, /className="academic-layout"/);
+  assert.match(page, /className="research-directions"/);
   assert.match(page, /id="publications"/);
   assert.match(page, /id="advising"/);
   assert.match(page, /id="talks"/);
   assert.match(page, /jinyu-zhang-informal-retouched-v1\.png/);
   assert.match(page, /Jinyu-Zhang-CV\.pdf/);
   assert.match(layout, /\/og-v2\.png/);
+  assert.match(layout, /contextual optimization/i);
   assert.doesNotMatch(page, /SkeletonPreview|codex-preview/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);
 });

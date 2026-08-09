@@ -45,6 +45,14 @@ const html = await response.text();
 if (!html.includes("Selected publications")) {
   throw new Error("Rendered homepage is missing expected academic content");
 }
+if (
+  !html.includes("Contextual Optimization") ||
+  !html.includes("Learning to Optimize (L2O)") ||
+  !html.includes("AI-aided Optimization") ||
+  !html.includes("AI-native Optimization")
+) {
+  throw new Error("Rendered homepage is missing expected research directions");
+}
 if (!html.includes("张晋瑜") || !html.includes("long-distance running")) {
   throw new Error("Rendered homepage is missing expected profile content");
 }

@@ -83,11 +83,36 @@ const advisors = [
   },
 ];
 
-const researchInterests = [
-  "Learning-augmented optimization",
-  "Data-driven and prescriptive analytics",
-  "Intelligent transportation systems",
-  "Scalable optimization algorithms",
+const researchDirections = [
+  {
+    number: "01",
+    title: "Contextual Optimization",
+    description:
+      "Developing optimization models that incorporate contextual information and predictions to produce better downstream decisions under changing environments.",
+  },
+  {
+    number: "02",
+    title: "Learning to Optimize (L2O)",
+    description:
+      "Developing learning-based approaches for solving complex optimization problems through two complementary paradigms.",
+    tracks: [
+      {
+        title: "AI-aided Optimization",
+        description:
+          "Augmenting conventional optimization solvers with AI, including learned warm starts, heuristics, algorithm selection, and solver configuration.",
+      },
+      {
+        title: "AI-native Optimization",
+        description:
+          "Using learned models as the primary solution mechanism to directly construct high-quality solutions from problem instances.",
+      },
+    ],
+  },
+];
+
+const researchApplications = [
+  "Intelligent Transportation Systems",
+  "Large-scale Operational Systems",
 ];
 
 const talks = [
@@ -225,7 +250,7 @@ export default function Home() {
               张晋瑜
             </p>
             <p className="profile-role">
-              Operations Research and Machine Learning
+              Contextual Optimization &amp; Learning to Optimize
               <br />
               LUTS, EPFL
             </p>
@@ -252,15 +277,16 @@ export default function Home() {
             <p className="intro">
               I am an incoming PhD student at the Urban Transport Systems
               Laboratory (LUTS), EPFL, advised by Prof. Nikolas Geroliminis.
-              My research lies at the intersection of machine learning,
-              mathematical optimization, and intelligent transportation
-              systems.
+              My research focuses on contextual optimization and learning to
+              optimize, with applications to intelligent transportation and
+              large-scale operational systems.
             </p>
             <p>
-              I am interested in connecting prediction with optimization so
-              that data can lead to better, faster, and more reliable
-              operational decisions. Before joining EPFL, I studied at
-              Southeast University and Beijing Jiaotong University.
+              I am interested in connecting contextual information and
+              prediction with downstream decision-making. Within learning to
+              optimize, I study both AI-aided approaches, where learning
+              augments conventional optimization solvers, and AI-native
+              approaches, where learned models directly construct solutions.
             </p>
             <p>
               My Chinese name is <span lang="zh-CN">张晋瑜</span> (Zhang
@@ -309,15 +335,40 @@ export default function Home() {
           <section id="research" className="content-section">
             <SectionHeading number="03" title="Research" />
             <p>
-              My work develops learning-assisted methods for decision-making in
-              complex and changing environments, with an emphasis on mobility
-              and large-scale operational systems.
+              My research connects learning and optimization to improve
+              decision-making in complex and changing environments.
             </p>
-            <ul className="interest-list">
-              {researchInterests.map((interest) => (
-                <li key={interest}>{interest}</li>
+            <div className="research-directions">
+              {researchDirections.map((direction) => (
+                <article className="research-direction" key={direction.title}>
+                  <span className="research-direction-index">
+                    {direction.number}
+                  </span>
+                  <div className="research-direction-copy">
+                    <h3>{direction.title}</h3>
+                    <p>{direction.description}</p>
+                    {direction.tracks ? (
+                      <div className="l2o-tracks">
+                        {direction.tracks.map((track) => (
+                          <div className="l2o-track" key={track.title}>
+                            <h4>{track.title}</h4>
+                            <p>{track.description}</p>
+                          </div>
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
+                </article>
               ))}
-            </ul>
+            </div>
+            <div className="research-applications">
+              <p>Applications</p>
+              <div>
+                {researchApplications.map((application) => (
+                  <span key={application}>{application}</span>
+                ))}
+              </div>
+            </div>
           </section>
 
           <section id="publications" className="content-section">
@@ -416,10 +467,10 @@ export default function Home() {
             aria-labelledby="contact-title"
           >
             <p className="profile-kicker">Contact</p>
-            <h2 id="contact-title">Let's talk research.</h2>
+            <h2 id="contact-title">Let&apos;s talk research.</h2>
             <p>
-              I am always happy to discuss optimization, mobility, and possible
-              research collaborations.
+              I am always happy to discuss contextual optimization, learning to
+              optimize, mobility, and possible research collaborations.
             </p>
             <a href="mailto:jinyuzhangseu@gmail.com">
               jinyuzhangseu@gmail.com
