@@ -48,7 +48,17 @@ test("server-renders the finished academic homepage", async () => {
   assert.match(html, /AI-native Optimization/i);
   assert.match(html, /directly construct high-quality solutions/i);
   assert.match(html, /Southeast University Presidential Scholarship/i);
+  assert.match(html, /Outstanding Graduate of Southeast University/i);
+  assert.match(html, /Pacesetter Model Graduate Student of Southeast University/i);
+  assert.match(html, /Outstanding Student Award, School of Transportation/i);
+  assert.match(html, /Academic Innovation Excellence Award/i);
+  assert.match(html, /First-Class Academic Scholarship/i);
+  assert.match(html, /Southeast University Traffic Design Institute Scholarship/i);
   assert.match(html, /2024[\s\S]*National Scholarship of China/i);
+  assert.doesNotMatch(
+    html,
+    /National College Mathematical Modeling Competition|ITS World Congress Innovation Competition|MathorCup/i,
+  );
   assert.doesNotMatch(html, /Highest graduate honor|top 1%|recipients university-wide/i);
   assert.match(html, /SuperOtterJory/i);
   assert.match(html, /Google Scholar/i);

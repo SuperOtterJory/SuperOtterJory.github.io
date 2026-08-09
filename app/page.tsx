@@ -196,6 +196,10 @@ const education = [
 
 const honors = [
   {
+    year: "2026",
+    title: "Outstanding Graduate of Southeast University",
+  },
+  {
     year: "2025",
     title: "Southeast University Presidential Scholarship",
   },
@@ -212,8 +216,32 @@ const honors = [
     title: "FTTE Future Stars Award",
   },
   {
+    year: "2025",
+    title: "Pacesetter Model Graduate Student of Southeast University",
+  },
+  {
+    year: "2025",
+    title: "Outstanding Student Award, School of Transportation",
+  },
+  {
+    year: "2025",
+    title: "Academic Scholarship",
+  },
+  {
     year: "2024",
     title: "National Scholarship of China",
+  },
+  {
+    year: "2024",
+    title: "Academic Innovation Excellence Award",
+  },
+  {
+    year: "2024",
+    title: "First-Class Academic Scholarship",
+  },
+  {
+    year: "2024",
+    title: "Southeast University Traffic Design Institute Scholarship",
   },
 ];
 
