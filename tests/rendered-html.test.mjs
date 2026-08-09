@@ -32,7 +32,9 @@ test("server-renders the finished academic homepage", async () => {
   assert.match(html, /<title>Jinyu Zhang \| Incoming PhD Student at EPFL<\/title>/i);
   assert.match(html, /Selected publications/i);
   assert.match(html, />News</i);
-  assert.match(html, /Happy to share that our paper/i);
+  assert.match(html, /Aug 9, 2026/i);
+  assert.match(html, /personal academic website is now live/i);
+  assert.doesNotMatch(html, /I presented our work on prescriptive analytics/i);
   assert.match(html, /Combines multi-source traffic data/i);
   assert.match(html, /Academic advising/i);
   assert.match(html, /Nikolas Geroliminis/i);

@@ -41,27 +41,19 @@ const publications = [
   },
 ];
 
-const newsItems = [
+const newsItems: Array<{
+  date: string;
+  dateTime: string;
+  category: string;
+  text: string;
+  href?: string;
+  linkLabel?: string;
+}> = [
   {
-    year: "2025",
-    category: "Publication",
-    text: 'Happy to share that our paper “Prescriptive analytics for freeway traffic state estimation by multi-source data fusion” was published in Transportation Research Part E.',
-    href: "https://doi.org/10.1016/j.tre.2025.104105",
-    linkLabel: "Paper",
-  },
-  {
-    year: "2025",
-    category: "Presentation",
-    text: "Happy to share that I presented our work on prescriptive analytics for freeway traffic state estimation at the Transportation Research Board Annual Meeting in Washington, D.C.",
-    href: "https://annualmeeting.mytrb.org/OnlineProgramArchive/Details/22757",
-    linkLabel: "TRB",
-  },
-  {
-    year: "2024",
-    category: "Publication",
-    text: 'Happy to share that our paper “A data-driven optimization-based approach for freeway traffic state estimation based on heterogeneous sensor data fusion” was published in Transportation Research Part E.',
-    href: "https://doi.org/10.1016/j.tre.2024.103656",
-    linkLabel: "Paper",
+    date: "Aug 9, 2026",
+    dateTime: "2026-08-09",
+    category: "Website",
+    text: "I’m happy to share that my personal academic website is now live.",
   },
 ];
 
@@ -331,15 +323,17 @@ export default function Home() {
             <SectionHeading number="02" title="News" />
             <div className="news-list">
               {newsItems.map((item) => (
-                <article className="news-item" key={`${item.year}-${item.text}`}>
-                  <time>{item.year}</time>
+                <article className="news-item" key={`${item.date}-${item.text}`}>
+                  <time dateTime={item.dateTime}>{item.date}</time>
                   <div className="news-copy">
                     <p className="news-category">{item.category}</p>
                     <p>{item.text}</p>
                   </div>
-                  <a href={item.href} target="_blank" rel="noreferrer">
-                    {item.linkLabel}
-                  </a>
+                  {item.href && item.linkLabel ? (
+                    <a href={item.href} target="_blank" rel="noreferrer">
+                      {item.linkLabel}
+                    </a>
+                  ) : null}
                 </article>
               ))}
             </div>
