@@ -64,7 +64,7 @@ const profileLinks = [
   },
   {
     label: "CV",
-    href: "/Jinyu-Zhang-CV.pdf",
+    href: "/Jinyu-Zhang-CV.pdf?v=20260819",
   },
   {
     label: "GitHub",
