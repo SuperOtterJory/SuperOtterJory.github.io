@@ -292,7 +292,7 @@ export default function Home() {
             height="1536"
           />
           <div className="profile-copy">
-            <p className="profile-kicker">Incoming PhD Student</p>
+            <p className="profile-kicker">PhD Student</p>
             <h1>Jinyu Zhang</h1>
             <p className="profile-chinese-name" lang="zh-CN">
               张晋瑜
@@ -323,7 +323,7 @@ export default function Home() {
           <section id="about" className="content-section intro-section">
             <SectionHeading number="01" title="About" />
             <p className="intro">
-              I am an incoming PhD student at the Urban Transport Systems
+              I am a PhD student at the Urban Transport Systems
               Laboratory (LUTS), EPFL, advised by Prof. Nikolas Geroliminis.
               My research focuses on contextual optimization and learning to
               optimize, with applications to intelligent transportation and

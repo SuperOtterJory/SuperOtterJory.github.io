@@ -29,7 +29,8 @@ test("server-renders the finished academic homepage", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<title>Jinyu Zhang \| Incoming PhD Student at EPFL<\/title>/i);
+  assert.match(html, /<title>Jinyu Zhang \| PhD Student at EPFL<\/title>/i);
+  assert.doesNotMatch(html, /incoming PhD/i);
   assert.match(html, /Selected publications/i);
   assert.match(html, />News</i);
   assert.match(html, /Aug 9, 2026/i);
@@ -76,7 +77,7 @@ test("keeps the final profile assets and removes starter references", async () =
         import.meta.url,
       ),
     ),
-    access(new URL("../public/og-v2.png", import.meta.url)),
+    access(new URL("../public/og-v3.png", import.meta.url)),
     access(new URL("../public/Jinyu-Zhang-CV.pdf", import.meta.url)),
   ]);
 
@@ -88,7 +89,7 @@ test("keeps the final profile assets and removes starter references", async () =
   assert.match(page, /id="talks"/);
   assert.match(page, /jinyu-zhang-informal-retouched-v1\.png/);
   assert.match(page, /Jinyu-Zhang-CV\.pdf/);
-  assert.match(layout, /\/og-v2\.png/);
+  assert.match(layout, /\/og-v3\.png/);
   assert.match(layout, /contextual optimization/i);
   assert.doesNotMatch(page, /SkeletonPreview|codex-preview/);
   assert.doesNotMatch(packageJson, /react-loading-skeleton/);

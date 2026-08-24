@@ -62,7 +62,7 @@ if (
 if (!html.includes("张晋瑜") || !html.includes("long-distance running")) {
   throw new Error("Rendered homepage is missing expected profile content");
 }
-if (!html.includes("https://superotterjory.github.io/og-v2.png")) {
+if (!html.includes("https://superotterjory.github.io/og-v3.png")) {
   throw new Error("Rendered homepage has incorrect social metadata");
 }
 

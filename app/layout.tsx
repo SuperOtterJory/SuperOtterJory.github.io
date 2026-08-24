@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { headers } from "next/headers";
 import "./globals.css";
 
-const title = "Jinyu Zhang | Incoming PhD Student at EPFL";
+const title = "Jinyu Zhang | PhD Student at EPFL";
 const description =
-  "Jinyu Zhang is an incoming PhD student at LUTS, EPFL, working on contextual optimization, AI-aided and AI-native learning to optimize, and intelligent transportation systems.";
+  "Jinyu Zhang is a PhD student at LUTS, EPFL, working on contextual optimization, AI-aided and AI-native learning to optimize, and intelligent transportation systems.";
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -16,7 +16,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const origin = host
     ? `${protocol}://${host}`
     : "https://jinyu-zhang-academic.ndyeeggs0uv.chatgpt.site";
-  const socialImage = `${origin}/og-v2.png`;
+  const socialImage = `${origin}/og-v3.png`;
 
   return {
     title,
@@ -29,8 +29,8 @@ export async function generateMetadata(): Promise<Metadata> {
         {
           url: socialImage,
           width: 1733,
-          height: 908,
-          alt: "Jinyu Zhang, incoming PhD student at EPFL",
+          height: 907,
+          alt: "Jinyu Zhang, PhD student at EPFL",
         },
       ],
     },
