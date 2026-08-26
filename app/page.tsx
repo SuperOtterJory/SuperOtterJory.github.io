@@ -177,7 +177,7 @@ const education = [
   {
     period: "2026 -",
     degree: "Ph.D. Student",
-    field: "Operations Research and Machine Learning",
+    field: "Civil and Environmental Engineering (EDCE)",
     institution: "EPFL, Lausanne, Switzerland",
   },
   {

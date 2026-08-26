@@ -45,6 +45,9 @@ const html = await response.text();
 if (!html.includes("Selected publications")) {
   throw new Error("Rendered homepage is missing expected academic content");
 }
+if (!html.includes("Civil and Environmental Engineering (EDCE)")) {
+  throw new Error("Rendered homepage is missing the official PhD program");
+}
 if (
   !html.includes(">News<") ||
   !html.includes("personal academic website is now live")

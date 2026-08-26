@@ -43,6 +43,8 @@ test("server-renders the finished academic homepage", async () => {
   assert.match(html, /beautiful jade/i);
   assert.match(html, /long-distance running/i);
   assert.match(html, /Conference talks/i);
+  assert.match(html, /Civil and Environmental Engineering \(EDCE\)/i);
+  assert.doesNotMatch(html, /Ph\.D\. Student[\s\S]{0,120}Operations Research and Machine Learning/i);
   assert.match(html, /Contextual Optimization/i);
   assert.match(html, /Learning to Optimize \(L2O\)/i);
   assert.match(html, /AI-aided Optimization/i);
