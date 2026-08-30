@@ -48,6 +48,9 @@ if (!html.includes("Selected publications")) {
 if (!html.includes("Civil and Environmental Engineering (EDCE)")) {
   throw new Error("Rendered homepage is missing the official PhD program");
 }
+if (!html.includes("mailto:jinyu.zhang@epfl.ch")) {
+  throw new Error("Rendered homepage is missing the current EPFL email");
+}
 if (
   !html.includes(">News<") ||
   !html.includes("personal academic website is now live")

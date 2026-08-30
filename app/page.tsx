@@ -60,11 +60,11 @@ const newsItems: Array<{
 const profileLinks = [
   {
     label: "Email",
-    href: "mailto:jinyuzhangseu@gmail.com",
+    href: "mailto:jinyu.zhang@epfl.ch",
   },
   {
     label: "CV",
-    href: "/Jinyu-Zhang-CV.pdf?v=20260819",
+    href: "/Jinyu-Zhang-CV.pdf?v=20260830",
   },
   {
     label: "GitHub",
@@ -540,9 +540,7 @@ export default function Home() {
               I am always happy to discuss contextual optimization, learning to
               optimize, mobility, and possible research collaborations.
             </p>
-            <a href="mailto:jinyuzhangseu@gmail.com">
-              jinyuzhangseu@gmail.com
-            </a>
+            <a href="mailto:jinyu.zhang@epfl.ch">jinyu.zhang@epfl.ch</a>
           </section>
         </article>
       </main>

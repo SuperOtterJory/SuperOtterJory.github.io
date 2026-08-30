@@ -65,6 +65,9 @@ test("server-renders the finished academic homepage", async () => {
   assert.doesNotMatch(html, /Highest graduate honor|top 1%|recipients university-wide/i);
   assert.match(html, /SuperOtterJory/i);
   assert.match(html, /Google Scholar/i);
+  assert.match(html, /mailto:jinyu\.zhang@epfl\.ch/i);
+  assert.match(html, /Jinyu-Zhang-CV\.pdf\?v=20260830/i);
+  assert.doesNotMatch(html, /jinyuzhangseu@gmail\.com/i);
   assert.doesNotMatch(html, /codex-preview|Your site is taking shape/i);
 });
 
