@@ -78,7 +78,7 @@ test("keeps the final profile assets and removes starter references", async () =
     readFile(new URL("../package.json", import.meta.url), "utf8"),
     access(
       new URL(
-        "../public/jinyu-zhang-informal-retouched-v1.png",
+        "../public/jinyu-zhang-swiss-alps-20260920.webp",
         import.meta.url,
       ),
     ),
@@ -92,7 +92,7 @@ test("keeps the final profile assets and removes starter references", async () =
   assert.match(page, /id="news"/);
   assert.match(page, /id="advising"/);
   assert.match(page, /id="talks"/);
-  assert.match(page, /jinyu-zhang-informal-retouched-v1\.png/);
+  assert.match(page, /jinyu-zhang-swiss-alps-20260920\.webp/);
   assert.match(page, /Jinyu-Zhang-CV\.pdf/);
   assert.match(layout, /\/og-v3\.png/);
   assert.match(layout, /contextual optimization/i);

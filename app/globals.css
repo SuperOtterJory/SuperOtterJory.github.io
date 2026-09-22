@@ -4,13 +4,20 @@
   --epfl-red: #ff0000;
   --ink: #1a1a1a;
   --body: #4f4f4f;
-  --muted: #767676;
+  --muted: #626262;
   --line: #e2e2e2;
   --soft: #f5f5f3;
   --paper: #ffffff;
   --shell-width: 1380px;
   --shell-gutter: 72px;
   --font-academic: "Times New Roman", Times, "黑体", SimHei, "Microsoft YaHei", "Heiti SC", "PingFang SC", sans-serif;
+  /* Shared type scale: body, supporting text, item titles, section titles. */
+  --text-body: 1.375rem;
+  --text-meta: 1.125rem;
+  --text-item: 1.5rem;
+  --text-heading: 2rem;
+  --leading-body: 1.65;
+  --leading-heading: 1.3;
   --font-chinese: "黑体", SimHei, "Microsoft YaHei", "Heiti SC", "PingFang SC", sans-serif;
 }
 
@@ -28,14 +35,11 @@ body {
   background: var(--paper);
   color: var(--ink);
   font-family: var(--font-academic);
-  font-size: 18px;
-  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
 }
 
 :lang(zh-CN) {
   font-family: var(--font-chinese);
-  font-weight: 700;
 }
 
 a {
@@ -71,8 +75,6 @@ a {
   gap: 0.65rem;
   align-items: center;
   flex: 0 0 auto;
-  font-size: 1.05rem;
-  font-weight: 680;
   letter-spacing: -0.015em;
 }
 
@@ -89,7 +91,6 @@ a {
   align-items: center;
   overflow-x: auto;
   color: #5f5f5f;
-  font-size: 0.95rem;
   scrollbar-width: none;
 }
 
@@ -138,21 +139,20 @@ a {
 }
 
 .profile-card {
-  position: sticky;
-  top: 116px;
+  position: static;
 }
 
 .profile-photo {
   display: block;
-  width: 196px;
-  height: 196px;
+  width: 232px;
+  height: auto;
+  aspect-ratio: 3 / 4;
   padding: 5px;
   border: 1px solid var(--line);
-  border-radius: 50%;
+  border-radius: 3px;
   background: white;
   object-fit: cover;
-  object-position: center 28%;
-  filter: saturate(0.92) contrast(1.01);
+  object-position: center;
 }
 
 .profile-copy {
@@ -163,17 +163,12 @@ a {
   margin: 0 0 0.45rem;
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.78rem;
-  font-weight: 650;
   letter-spacing: 0.08em;
   text-transform: uppercase;
 }
 
 .profile-card h1 {
   margin: 0;
-  font-size: 1.58rem;
-  font-weight: 680;
-  line-height: 1.25;
   letter-spacing: -0.025em;
 }
 
@@ -181,22 +176,17 @@ a {
   margin: 0.15rem 0 0;
   color: var(--muted);
   font-family: var(--font-chinese);
-  font-size: 1.02rem;
-  font-weight: 700;
   letter-spacing: 0.08em;
 }
 
 .profile-role {
   margin: 0.65rem 0 0;
   color: var(--body);
-  font-size: 0.98rem;
-  line-height: 1.55;
 }
 
 .profile-location {
   margin: 0.75rem 0 0;
   color: var(--muted);
-  font-size: 0.88rem;
 }
 
 .profile-location::before {
@@ -222,7 +212,6 @@ a {
   padding: 0.56rem 0;
   border-bottom: 1px solid var(--line);
   color: var(--body);
-  font-size: 0.9rem;
   transition:
     color 150ms ease,
     padding-left 150ms ease;
@@ -231,7 +220,6 @@ a {
 .profile-links a span:last-child {
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.68rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -267,16 +255,11 @@ a {
 .section-heading > span {
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.82rem;
-  font-weight: 650;
   letter-spacing: 0.05em;
 }
 
 .section-heading h2 {
   margin: 0;
-  font-size: clamp(2.1rem, 3vw, 2.65rem);
-  font-weight: 670;
-  line-height: 1.2;
   letter-spacing: -0.035em;
 }
 
@@ -284,8 +267,6 @@ a {
   max-width: 900px;
   margin: 0;
   color: var(--body);
-  font-size: 1.16rem;
-  line-height: 1.65;
 }
 
 .content-section > p + p {
@@ -294,53 +275,23 @@ a {
 
 .content-section .personal-note {
   display: flex;
-  gap: 0.75rem;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
   align-items: baseline;
   margin-top: 1.25rem;
   color: var(--body);
-  font-size: 1.08rem;
 }
 
 .personal-note > span {
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.82rem;
-  font-weight: 650;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
 
 .content-section .intro {
   color: var(--ink);
-  font-size: clamp(1.38rem, 2.25vw, 1.68rem);
-  line-height: 1.55;
   letter-spacing: -0.015em;
-}
-
-.intro-section .section-heading > span {
-  font-size: 0.75rem;
-}
-
-.intro-section .section-heading h2 {
-  font-size: clamp(1.8rem, 2.6vw, 2.2rem);
-}
-
-.intro-section > p {
-  font-size: 1.14rem;
-  line-height: 1.68;
-}
-
-.intro-section .intro {
-  font-size: clamp(1.24rem, 1.8vw, 1.46rem);
-  line-height: 1.6;
-}
-
-.intro-section .personal-note {
-  font-size: 1.04rem;
-}
-
-.intro-section .personal-note > span {
-  font-size: 0.78rem;
 }
 
 .news-list {
@@ -349,7 +300,7 @@ a {
 
 .news-item {
   display: grid;
-  grid-template-columns: 120px minmax(0, 1fr) auto;
+  grid-template-columns: 132px minmax(0, 1fr) auto;
   gap: 1.5rem;
   align-items: start;
   padding: 1.25rem 0;
@@ -359,9 +310,7 @@ a {
 .news-item time {
   color: var(--muted);
   font-family: var(--font-academic);
-  font-size: 0.92rem;
   font-variant-numeric: lining-nums tabular-nums;
-  line-height: 1.7;
 }
 
 .news-copy p {
@@ -371,18 +320,13 @@ a {
 .news-copy .news-category {
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.82rem;
-  font-weight: 650;
   letter-spacing: 0.05em;
-  line-height: 1.5;
   text-transform: uppercase;
 }
 
 .news-copy p:last-child {
   margin-top: 0.25rem;
   color: var(--body);
-  font-size: 1.08rem;
-  line-height: 1.6;
 }
 
 .news-item > a {
@@ -391,7 +335,6 @@ a {
   border-bottom: 1px solid var(--line);
   color: var(--body);
   font-family: var(--font-academic);
-  font-size: 0.9rem;
 }
 
 .news-item > a:hover,
@@ -417,18 +360,12 @@ a {
   margin: 0;
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.86rem;
-  font-weight: 650;
   letter-spacing: 0.045em;
-  line-height: 1.6;
   text-transform: uppercase;
 }
 
 .advisor-copy h3 {
   margin: 0;
-  font-size: 1.18rem;
-  font-weight: 650;
-  line-height: 1.45;
 }
 
 .advisor-copy h3 a:hover,
@@ -439,8 +376,6 @@ a {
 .advisor-copy p {
   margin: 0.25rem 0 0;
   color: var(--muted);
-  font-size: 1.02rem;
-  line-height: 1.55;
 }
 
 .advisor-links {
@@ -456,7 +391,6 @@ a {
   border-bottom: 1px solid var(--line);
   color: var(--body);
   font-family: var(--font-academic);
-  font-size: 0.9rem;
 }
 
 .advisor-links a:hover,
@@ -484,16 +418,11 @@ a {
   padding-top: 0.2rem;
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.86rem;
-  font-weight: 650;
   letter-spacing: 0.05em;
 }
 
 .research-direction-copy h3 {
   margin: 0;
-  font-size: 1.3rem;
-  font-weight: 650;
-  line-height: 1.4;
   letter-spacing: -0.012em;
 }
 
@@ -501,8 +430,6 @@ a {
   max-width: 860px;
   margin: 0.4rem 0 0;
   color: var(--body);
-  font-size: 1.08rem;
-  line-height: 1.62;
 }
 
 .l2o-tracks {
@@ -521,16 +448,11 @@ a {
 
 .l2o-track h4 {
   margin: 0;
-  font-size: 1.12rem;
-  font-weight: 650;
-  line-height: 1.45;
 }
 
 .l2o-track p {
   margin: 0.35rem 0 0;
   color: var(--muted);
-  font-size: 1.01rem;
-  line-height: 1.58;
 }
 
 .research-applications {
@@ -545,8 +467,6 @@ a {
   margin: 0;
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.86rem;
-  font-weight: 650;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -560,7 +480,6 @@ a {
 .research-applications span {
   position: relative;
   color: var(--body);
-  font-size: 1.06rem;
 }
 
 .research-applications span + span::before {
@@ -591,9 +510,7 @@ a {
 .honors-list time {
   color: var(--muted);
   font-family: var(--font-academic);
-  font-size: 0.92rem;
   font-variant-numeric: lining-nums tabular-nums;
-  line-height: 1.7;
 }
 
 .publication-copy {
@@ -603,29 +520,21 @@ a {
 }
 
 .publication-copy strong {
-  font-size: 1.18rem;
-  font-weight: 640;
-  line-height: 1.52;
   letter-spacing: -0.012em;
 }
 
 .publication-summary {
   color: var(--body);
-  font-size: 1.03rem;
-  line-height: 1.55;
 }
 
 .publication-copy small {
   color: var(--muted);
-  font-size: 1.02rem;
-  line-height: 1.55;
 }
 
 .publication-arrow {
   justify-self: end;
   min-width: 56px;
   color: var(--epfl-red);
-  font-size: 0.95rem;
   text-align: right;
 }
 
@@ -639,8 +548,6 @@ a {
   margin-top: 1.25rem;
   padding-bottom: 2px;
   border-bottom: 1px solid var(--ink);
-  font-size: 1.02rem;
-  font-weight: 600;
 }
 
 .text-link:hover,
@@ -669,21 +576,12 @@ a {
 .honors-list h3,
 .talk-copy h3 {
   margin: 0;
-  font-size: 1.18rem;
-  font-weight: 650;
-  line-height: 1.5;
-}
-
-.education-list h3 span {
-  font-weight: 450;
 }
 
 .education-list p,
 .talk-copy p {
   margin: 0.25rem 0 0;
   color: var(--muted);
-  font-size: 1.02rem;
-  line-height: 1.55;
 }
 
 .talk-item {
@@ -697,7 +595,6 @@ a {
   background: var(--soft);
   color: var(--epfl-red);
   font-family: var(--font-academic);
-  font-size: 0.82rem;
   letter-spacing: 0.04em;
   text-transform: uppercase;
 }
@@ -712,8 +609,6 @@ a {
 
 .contact-section h2 {
   margin: 0;
-  font-size: clamp(1.6rem, 3vw, 2.25rem);
-  font-weight: 670;
   letter-spacing: -0.04em;
 }
 
@@ -721,14 +616,12 @@ a {
   max-width: 580px;
   margin: 0.65rem 0 1.2rem;
   color: var(--body);
-  font-size: 1.14rem;
 }
 
 .contact-section > a {
   padding-bottom: 3px;
   border-bottom: 1px solid var(--ink);
   font-family: var(--font-academic);
-  font-size: 1.06rem;
 }
 
 .contact-section > a:hover,
@@ -749,7 +642,104 @@ footer > div {
   margin: 0 auto;
   padding: 1.35rem 0;
   color: var(--muted);
-  font-size: 0.9rem;
+}
+
+/* All sections share these roles; emphasis uses weight rather than resizing. */
+body {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+:lang(zh-CN) {
+  font-weight: 700;
+}
+.profile-card h1,
+.section-heading h2,
+.contact-section h2 {
+  font-size: var(--text-heading);
+  font-weight: 700;
+  line-height: var(--leading-heading);
+}
+.advisor-copy h3,
+.research-direction-copy h3,
+.publication-copy strong,
+.education-list h3,
+.honors-list h3,
+.talk-copy h3 {
+  font-size: var(--text-item);
+  font-weight: 700;
+  line-height: 1.4;
+}
+.content-section > p,
+.news-copy p:last-child,
+.advisor-copy p,
+.research-direction-copy > p,
+.l2o-track h4,
+.l2o-track p,
+.research-applications span,
+.publication-summary,
+.publication-copy small,
+.education-list p,
+.talk-copy p,
+.text-link,
+.contact-section > p:not(.profile-kicker),
+.contact-section > a,
+.profile-chinese-name {
+  font-size: var(--text-body);
+  line-height: var(--leading-body);
+}
+.wordmark,
+.site-header nav,
+.profile-kicker,
+.profile-role,
+.profile-location,
+.profile-links a,
+.profile-links a span:last-child,
+.section-heading > span,
+.personal-note > span,
+.news-item time,
+.news-copy .news-category,
+.news-item > a,
+.advisor-role,
+.advisor-links a,
+.talk-item > a,
+.research-direction-index,
+.research-applications > p,
+.publication-item time,
+.education-list time,
+.honors-list time,
+.talk-item time,
+.publication-arrow,
+.talk-copy p span,
+footer > div {
+  font-size: var(--text-meta);
+  line-height: 1.5;
+}
+.wordmark,
+.profile-kicker,
+.section-heading > span,
+.personal-note > span,
+.news-category,
+.advisor-role,
+.research-direction-index,
+.l2o-track h4,
+.research-applications > p,
+.text-link {
+  font-weight: 700;
+}
+.education-list h3 span {
+  font-weight: 400;
+}
+.profile-copy,
+.advisor-copy,
+.publication-copy,
+.talk-copy,
+.education-list article > div,
+.honors-list h3 {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+.contact-section > a {
+  overflow-wrap: anywhere;
 }
 
 @media (max-width: 1100px) {
@@ -759,8 +749,8 @@ footer > div {
   }
 
   .profile-photo {
-    width: 176px;
-    height: 176px;
+    width: 210px;
+    height: auto;
   }
 
   .site-header nav {
@@ -769,6 +759,19 @@ footer > div {
 }
 
 @media (max-width: 760px) {
+  :root {
+    --text-body: 1.25rem;
+    --text-meta: 1.0625rem;
+    --text-item: 1.375rem;
+    --text-heading: 1.875rem;
+  }
+  .advisor-item {
+    grid-template-columns: 132px minmax(0, 1fr);
+  }
+  .advisor-links {
+    grid-column: 2;
+  }
+
   .nav-inner {
     width: calc(100% - 36px);
     min-height: 58px;
@@ -777,10 +780,6 @@ footer > div {
   .site-header nav {
     max-width: 65vw;
     gap: 1.1rem;
-  }
-
-  .site-header nav a {
-    font-size: 0.8rem;
   }
 
   .academic-layout {
@@ -801,7 +800,7 @@ footer > div {
   .profile-photo {
     grid-row: span 2;
     width: 128px;
-    height: 128px;
+    height: auto;
   }
 
   .profile-copy {
@@ -809,7 +808,7 @@ footer > div {
   }
 
   .profile-links {
-    grid-column: 2;
+    grid-column: 1 / -1;
     margin-top: 0;
   }
 
@@ -845,6 +844,7 @@ footer > div {
     font-size: 0;
   }
 
+
   .wordmark > span {
     width: 10px;
     height: 10px;
@@ -861,23 +861,7 @@ footer > div {
 
   .profile-photo {
     width: 104px;
-    height: 104px;
-  }
-
-  .profile-card h1 {
-    font-size: 1.32rem;
-  }
-
-  .profile-chinese-name {
-    font-size: 0.88rem;
-  }
-
-  .profile-role {
-    font-size: 0.82rem;
-  }
-
-  .profile-location {
-    font-size: 0.74rem;
+    height: auto;
   }
 
   .section-heading {
@@ -885,12 +869,12 @@ footer > div {
   }
 
   .news-item {
-    grid-template-columns: 96px minmax(0, 1fr);
+    grid-template-columns: 1fr;
     gap: 0.75rem;
   }
 
   .news-item > a {
-    grid-column: 2;
+    grid-column: 1;
     justify-self: start;
   }
 
@@ -914,29 +898,45 @@ footer > div {
   }
 
   .publication-item {
-    grid-template-columns: 42px minmax(0, 1fr) 40px;
-    gap: 0.7rem;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 0.5rem;
+  }
+  .publication-copy {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .publication-arrow {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   .education-list article,
   .honors-list article {
-    grid-template-columns: 78px minmax(0, 1fr);
+    grid-template-columns: 1fr;
     gap: 0.9rem;
   }
 
   .advisor-item {
-    grid-template-columns: 98px minmax(0, 1fr);
+    grid-template-columns: 1fr;
     gap: 0.9rem;
   }
 
   .advisor-links {
-    grid-column: 2;
+    grid-column: 1;
     padding-top: 0;
   }
 
   .talk-item {
-    grid-template-columns: 44px minmax(0, 1fr) 30px;
+    grid-template-columns: minmax(0, 1fr) auto;
     gap: 0.75rem;
+  }
+  .talk-copy {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+  .talk-item > a {
+    grid-column: 2;
+    grid-row: 1;
   }
 
   footer > div {
