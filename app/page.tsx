@@ -1,5 +1,14 @@
 const publications = [
   {
+    year: "2026",
+    title: "Multistage Contextual Optimization for Vehicle Repositioning",
+    authors: "J. Zhang, D. Huang, Z. Liu, and N. Geroliminis",
+    venue: "arXiv preprint arXiv:2611.22330",
+    summary:
+      "Learns demand predictions through multistage vehicle-repositioning decisions, with exact gradients across coupled stages and parallel block evaluation to accelerate training.",
+    href: "https://arxiv.org/abs/2611.22330",
+  },
+  {
     year: "2025",
     title:
       "Prescriptive analytics for freeway traffic state estimation by multi-source data fusion",
@@ -49,6 +58,14 @@ const newsItems: Array<{
   href?: string;
   linkLabel?: string;
 }> = [
+  {
+    date: "Nov 18, 2026",
+    dateTime: "2026-11-18",
+    category: "Preprint",
+    text: "I’m happy to share our new preprint, “Multistage Contextual Optimization for Vehicle Repositioning”, now available on arXiv.",
+    href: "https://arxiv.org/abs/2611.22330",
+    linkLabel: "arXiv",
+  },
   {
     date: "Aug 9, 2026",
     dateTime: "2026-08-09",
@@ -461,7 +478,7 @@ export default function Home() {
                     </small>
                   </span>
                   <span className="publication-arrow" aria-hidden="true">
-                    DOI
+                    {publication.href.startsWith("https://arxiv.org/") ? "arXiv" : "DOI"}
                   </span>
                 </a>
               ))}
